@@ -2,7 +2,7 @@
 
 > Very easy and quick to use db, which is weekly updated!
 
-### 🏠 [Homepage](https://github.com/kefranabg/readme-md-generator#readme)
+### 🏠 [Homepage](https://github.com/falseCloud/mydb)
 
 ## Prerequisites
 
