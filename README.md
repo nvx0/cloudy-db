@@ -25,7 +25,10 @@ npm i cloudy-db
 
 ## Example
 ```js
-const db = require('cloudy-db');
+const cloudy = require('cloudy-db');
+const db = new cloudy({
+path: 'db.json'
+})
 
 // Example
 
