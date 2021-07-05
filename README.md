@@ -28,49 +28,54 @@ console.log(db.get("cloudy-db"))
 ```
 
 ## DB Operations
+
+<h6>*Note: db stands for how you defined cloudy-db For example. 
+const totallynotdb = require('cloudy-db');
+You can define it however you like!</h6>
+
 Set value
 ```js
-set("mydb","welcome to my db!")
+db.set("mydb","welcome to my db!")
 ```
 Delete value
 ```js
-del("mydb")
+db.del("mydb")
 ```
 Has value?
 ```js
-has("mydb")
+db.has("mydb")
 ```
 ## DB Math operations
 Subctraction
 ```js
-subtract("mydb_subtract", "70")
+db.subtract("mydb_subtract", "70")
 ```
 Add
 ```js
-add("mydb_subtract", "420")
+db.add("mydb_subtract", "420")
 ```
 ## DB Backup
 Save backup
 ```js
-backup("save")
+db.backup("save")
 ```
 Read backup
 ```js 
-backup("read")
+db.backup("read")
 ```
 ## DB Extraction
 Extract all values from DB without SHA256 Encrypting:
 ```js
-extract("<filname>", "false")
+db.extract("<filname>", "false")
 ```
 Extract all values from DB with permament hashing:
 ```js
-extract("<filname>", "true")
+db.extract("<filname>", "true")
 ```
 
 ## DB Sync
 ```js
-sync()
+db.sync()
 ```
 
 
