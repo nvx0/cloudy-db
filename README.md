@@ -53,11 +53,11 @@ Read backup
 backup("read")
 ```
 ## DB Extraction
-Extract all values from DB without SHA256 Encrypting (permament):
+Extract all values from DB without SHA256 Encrypting:
 ```js
 extract("<filname>", "false")
 ```
-Extract all values from DB with SHA256 Encrypting:
+Extract all values from DB with permament hashing:
 ```js
 extract("<filname>", "true")
 ```
