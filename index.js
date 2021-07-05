@@ -4,8 +4,6 @@ const fs = require('fs');
 const JSONdb = require('simple-json-db');
 const sha256 = require('js-sha256');
 
-export { cloudy-db };
-
     if (fs.existsSync(db_path_backup)) {
       // pass
     } else {
@@ -30,7 +28,7 @@ const db = new JSONdb('./mydb.json');
 
 try {
 
-function set(name, key) {
+exports.set = function set(name, key) {
     try {
     if (!name || !key) {
         throw new TypeError("No name or key specified for set() Expected: string")
@@ -42,7 +40,7 @@ function set(name, key) {
     }
 }
 
-function get(key) {
+exports.get = function get(key) {
     try {
     if (!key) {
         throw new TypeError("No key for get() specifiied. Expected: string")
@@ -54,7 +52,7 @@ function get(key) {
     }
 }
 
-function del(name) {
+exports.del = function del(name) {
     try {
     if (!name) {
         throw new TypeError("No name or key specified for del() Expected: string")
@@ -66,7 +64,7 @@ function del(name) {
     }
 }
 
-function has(key) {
+exports.has = function has(key) {
     return new Promise(async (resolve, reject) => {
         try {
             if (!key) {
@@ -80,7 +78,7 @@ function has(key) {
     })
 }
 
-function sync() {
+exports.sync = function sync() {
     try {
        return db.sync();
     } catch (err) {
@@ -93,7 +91,7 @@ function sync() {
     throw new TypeError(err)
 } 
 
-function backup(type) {
+exports.backup = function backup(type) {
     return new Promise(async (resolve, reject) => {
         try {
             if (!type) {
@@ -142,7 +140,7 @@ function backup(type) {
             }
     })}
     
-    function extract(filename, encrypted) {
+	exports.extract = function extract(filename, encrypted) {
         if (!filename) {
             throw new TypeError("[MYDB] Missing filename for extract()")
         } else {
@@ -171,7 +169,7 @@ function backup(type) {
         }
     }
     
-    function subtract(key, value) {
+    exports.subtract = function subtract(key, value) {
         if (!key) {
             throw new TypeError("[MYDB] Missing db key for subtract()")
         } else {
@@ -190,7 +188,7 @@ function backup(type) {
     }
 
 
-function add(key, value) {
+	exports.add = function add(key, value) {
     if (!key) {
         throw new TypeError("[MYDB] Missing db key for add()")
     } else {
@@ -208,9 +206,4 @@ function add(key, value) {
     }
 }
 
-module.exports = {}
-
-// Hope you enjoy using mydb!
-// Version alpha3.4.4
-// Coded by cloud3 :)
-// If you found any issue please report it here: https://github.com/falseCloud/mydb/issues
+// Firts working release! By falseCloud x Remixiak
