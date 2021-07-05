@@ -25,8 +25,10 @@ npm i cloudy-db
 
 ## Example
 ```js
-const cloudydb = require('cloudy-db')
-      db = new cloudydb({path: "db_bot"});
+const cloudy = require('cloudy-db');
+const db = new cloudy({
+path: 'db-bot'
+})
 
 // Example
 
