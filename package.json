@@ -1,4 +1,8 @@
 {
+  "name": "mydb",
+  "author": "cloud3 (cloud3.site)",
+  "version": "1.0.0",
+  "main": "index.js",
   "dependencies": {
     "fs": "^0.0.1-security",
     "js-sha256": "^0.9.0",
