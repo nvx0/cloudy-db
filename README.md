@@ -2,6 +2,13 @@
 
 > Very easy and lightweight quick to use db, which is weekly updated! 
 
+[![Version](https://img.shields.io/npm/v/cloudy-db.svg)](https://www.npmjs.com/package/cloudy-db)
+![Prerequisite](https://img.shields.io/badge/npm-%3E%3D5.5.0-blue.svg)
+![Prerequisite](https://img.shields.io/badge/node-%3E%3D14.0.0-blue.svg)
+[![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://cloud3.site/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://cloud3.site/)
+[![License: MIT](https://img.shields.io/github/license/falseCloud/cloudy-db)](https://img.shields.io/github/license/falseCloud/cloudy-db)
+
 ### 🏠 [Homepage](https://github.com/falseCloud/cloudy-db)
 
 ## Prerequisites
