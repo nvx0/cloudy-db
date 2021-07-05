@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to cloudy-db 👋</h1>
 
-> Very easy and lightweight quick to use db, which is weekly updated! | Package is not working yet!
+> Very easy and lightweight quick to use db, which is weekly updated! 
 
 ### 🏠 [Homepage](https://github.com/falseCloud/cloudy-db)
 
