@@ -78,7 +78,7 @@ class Database {
     backup(path) {
         if(!path) throw new TypeError("[BACKUP] No path specifiied!")
         try {
-            fs.readFile(this.path, function (err, data) {
+            fs.readFile(this.path + ".json", function (err, data) {
                 if (err) throw err;
                 fs.writeFile(path, data, function (err) {
                     if (err) throw err;
@@ -91,7 +91,7 @@ class Database {
     
     cleandb(path) {
         try {
-            fs.writeFile(this.path, "", function(err) {
+            fs.writeFile(this.path + ".json", "", function(err) {
                 if(err) {
                     return console.log(err);
                 }})
@@ -103,7 +103,7 @@ class Database {
 
     cleanbackup(path) {
         try {
-            fs.writeFile(this.path, "", function(err) {
+            fs.writeFile(this.path + ".json", "", function(err) {
                 if(err) {
                     return console.log(err);
                 }})
@@ -118,9 +118,9 @@ class Database {
      * @param {string} fileName - File to extract
      * @param {boolean} encrypted
      */
-    extract(fileName, encrypted) {
-        if (!fileName || !encrypted) throw new TypeError("[EXTRACT] No fileNAme or encrypted specifiied!")
-        const writefile = `./${fileName}.json`
+    extract(fileName, encrypted, path) {
+        if (!this.path || !encrypted) throw new TypeError("[EXTRACT] No filename or encrypted specifiied!")
+        const writefile = `./${this.path}.json`
 
         fs.readFile(this.path, function (err, data) {
             if (err) throw err;
@@ -129,13 +129,13 @@ class Database {
                 const datanew = sha256(data);
                 fs.writeFile(writefile, datanew, function (err) {
                     if (err) throw err;
-                    console.log(`[EXTRACT] Exported file to ${fileName}.json with hashing!`);
+                    console.log(`[EXTRACT] Exported file to ${this.path}.json with hashing!`);
                 });
 
             } else {
                 fs.writeFile(writefile, data, function (err) {
                     if (err) throw err;
-                    console.log(`[EXTRACT] Exported file to ${fileName}.json without hashing!`);
+                    console.log(`[EXTRACT] Exported file to ${this.path}.json without hashing!`);
                 });
             }
         });

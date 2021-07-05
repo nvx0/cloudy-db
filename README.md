@@ -25,7 +25,8 @@ npm i cloudy-db
 
 ## Example
 ```js
-const db = require('cloudy-db');
+const cloudydb = require('cloudy-db')
+      db = new cloudydb({path: "db_bot"});
 
 // Example
 
@@ -39,6 +40,8 @@ console.log(db.get("cloudy-db"))
 
 <h6>*Note: db stands for how you defined cloudy-db 
 You can define it however you like!</h6>
+
+<h6>*Note: new docs will be available soon!</h6>
 
 Set value
 ```js
@@ -79,27 +82,6 @@ Extract all values from DB with permament hashing:
 ```js
 db.extract("<filname>", "true")
 ```
-
-## DB Sync
-```js
-db.sync()
-```
-
-## DB Clean
-*Note: If you didn't backup your DB your data will be permamently lost!*
-
-Clean db:
-
-```js
-db.cleandb()
-```
-Clean backup:
-
-```js
-db.cleanbackup()
-```
-
-
 
 ## Author
 
