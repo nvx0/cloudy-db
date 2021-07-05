@@ -206,4 +206,26 @@ exports.backup = function backup(type) {
     }
 }
 
-// Firts working release! By falseCloud x Remixiak
+exports.cleandb = function cleandb() {
+        try {
+            fs.writeFile(db_path, "", function(err) {
+                if(err) {
+                    return console.log(err);
+                }})
+                return console.log(`[MYDB] Successfully cleaned DB!`) && console.log(`[MYDB.INFO] If you made mistake check your backup file!`)
+        } catch (err) {
+            throw new TypeError(err)
+            }
+        }
+
+exports.cleanbackup = function cleanbackup() {
+        try {
+            fs.writeFile(db_path_backup, "", function(err) {
+                if(err) {
+                    return console.log(err);
+                }})
+                return console.log(`[MYDB] Successfully cleaned backup DB!`) && console.log(`[MYDB.INFO] If you made mistake check your main DB file!`)
+        } catch (err) {
+            throw new TypeError(err)
+            }
+        }
