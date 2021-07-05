@@ -83,11 +83,6 @@ Extract all values from DB with permament hashing:
 db.extract("<filname>", "true")
 ```
 
-## DB Sync
-```js
-db.sync()
-```
-
 ## DB Clean
 *Note: If you didn't backup your DB your data will be permamently lost!*
 
