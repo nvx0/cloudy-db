@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to mydb 👋</h1>
+<h1 align="center">Welcome to my-db 👋</h1>
 
 > Very easy and quick to use db, which is weekly updated!
 
