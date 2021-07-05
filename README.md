@@ -86,12 +86,15 @@ db.sync()
 ```
 
 ## DB Clean
-<h6>*Note: If you didn't backup your DB your data will be permamently lost!</h6>
+*Note: If you didn't backup your DB your data will be permamently lost!*
+
 Clean db:
+
 ```js
 db.cleandb()
 ```
 Clean backup:
+
 ```js
 db.cleanbackup()
 ```
