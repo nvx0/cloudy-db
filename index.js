@@ -65,15 +65,17 @@ function del(name) {
 }
 
 function has(key) {
-    try {
-    if (!key) {
-        throw new TypeError(`No name or key specified for has() Expected: string`)
-        } else {
-            return db.has(key);
+    return new Promise(async (resolve, reject) => {
+        try {
+            if (!key) {
+                throw new TypeError(`No name or key specified for has() Expected: string`)
+            } else {
+                return db.has(key);
+            }
+        } catch (err) {
+                throw new TypeError(err)
         }
-    } catch (err) {
-        throw new TypeError(err)
-    }
+    })
 }
 
 function sync() {
@@ -90,97 +92,100 @@ function sync() {
 } 
 
 function backup(type) {
-    try {
-        if (!type) {
-            throw new TypeError("No name or key specified for type() Expected: string")
-            } else {
-                if (type === "save") {
-                    try {
-                        fs.readFile(db_path, function (err, data) {
-                            if (err) throw err;
-                            fs.writeFile(db_path_backup, data, function (err) {
-                                if (err) throw err;
-                                if (type !== "save") {
-                                    console.error(`[MYDB] Coudln't save backup! ${type} is not one of two (save/read)`)
-                                } else {
-                                    return console.log("[MYDB] Succesfully saved backup!") 
-                                }
-                            });
-                        });
-                    } catch (err) {
-                        console.error("[MYDB] If no error is specified please open a issue on github and give your code!")
-                        throw new TypeError(err)
-                    }
-                }
-
-                if (type === "read") {
-                    try {
-                        fs.readFile(db_path_backup, function (err, data) {
-                            if (err) throw err;
-                            fs.writeFile(db_path, data, function (err) {
-                                if (err) throw err;
-                                if (type !== "read") {
-                                    console.error(`[MYDB] Coudln't save backup! ${type} is not one of two (save/read)`)
-                                } else {
-                                    return console.log("[MYDB] Succesfully read & wrote backup!") 
-                                }
-                            });
-                        });
-                    } catch (err) {
-                        console.error("[MYDB] If no error is specified please open a issue on github and give your code!")
-                        throw new TypeError(err)
-                    }
-                }
-            }
-        } catch (err) {
-            throw new TypeError(err)
-        }
-}
-
-function extract(filename, encrypted) {
-    if (!filename) {
-        throw new TypeError("[MYDB] Missing filename for extract()")
-    } else {
-    if (!encrypted) {
-        throw new TypeError("[MYDB] Missing hashed for extract()")
-    } else {
-        const writefile = `./${filename}.json`
-
-        fs.readFile(db_path, function (err, data) {
-            if (err) throw err; 
-    
-            if (encrypted === "true") {
-                const datanew = sha256(data);
-                fs.writeFile(writefile, datanew, function (err) {
-                    if (err) throw err;
-                    console.log(`[MYDB] Exported file to ${filename}.json with hashing!`);
-                    }); 
-            
-            } else {
-                fs.writeFile(writefile, data, function (err) {
-                    if (err) throw err;
-                    console.log(`[MYDB] Exported file to ${filename}.json without hashing!`);
-                    });
-            }});
-        }}}
-
-function subtract(key, value) {
-    if (!key) {
-        throw new TypeError("[MYDB] Missing db key for subtract()")
-    } else {
-    if (!value) {
-        throw new TypeError("[MYDB] Missing value to subtract for subtract()")
-    } else {
+    return new Promise(async (resolve, reject) => {
         try {
-                const math = `${db.get(key)-value}`
-                db.set(key, math)
-                return console.log(`[MYDB] Successfully subtracted!`)
-        } catch (err) {
-            throw new TypeError(err)
+            if (!type) {
+                throw new TypeError("No name or key specified for type() Expected: string")
+                } else {
+                    if (type === "save") {
+                        try {
+                            fs.readFile(db_path, function (err, data) {
+                                if (err) throw err;
+                                fs.writeFile(db_path_backup, data, function (err) {
+                                    if (err) throw err;
+                                    if (type !== "save") {
+                                        console.error(`[MYDB] Coudln't save backup! ${type} is not one of two (save/read)`)
+                                    } else {
+                                        return console.log("[MYDB] Succesfully saved backup!") 
+                                    }
+                                });
+                            });
+                        } catch (err) {
+                            console.error("[MYDB] If no error is specified please open a issue on github and give your code!")
+                            throw new TypeError(err)
+                        }
+                    }
+    
+                    if (type === "read") {
+                        try {
+                            fs.readFile(db_path_backup, function (err, data) {
+                                if (err) throw err;
+                                fs.writeFile(db_path, data, function (err) {
+                                    if (err) throw err;
+                                    if (type !== "read") {
+                                        console.error(`[MYDB] Coudln't save backup! ${type} is not one of two (save/read)`)
+                                    } else {
+                                        return console.log("[MYDB] Succesfully read & wrote backup!") 
+                                    }
+                                });
+                            });
+                        } catch (err) {
+                            console.error("[MYDB] If no error is specified please open a issue on github and give your code!")
+                            throw new TypeError(err)
+                        }
+                    }
+                }
+            } catch (err) {
+                throw new TypeError(err)
+            }
+    })}
+    
+    function extract(filename, encrypted) {
+        if (!filename) {
+            throw new TypeError("[MYDB] Missing filename for extract()")
+        } else {
+        if (!encrypted) {
+            throw new TypeError("[MYDB] Missing hashed for extract()")
+        } else {
+            const writefile = `./${filename}.json`
+    
+            fs.readFile(db_path, function (err, data) {
+                if (err) throw err; 
+        
+                if (encrypted === "true") {
+                    const datanew = sha256(data);
+                    fs.writeFile(writefile, datanew, function (err) {
+                        if (err) throw err;
+                        console.log(`[MYDB] Exported file to ${filename}.json with hashing!`);
+                        }); 
+                
+                } else {
+                    fs.writeFile(writefile, data, function (err) {
+                        if (err) throw err;
+                        console.log(`[MYDB] Exported file to ${filename}.json without hashing!`);
+                        });
+                }});
             }
         }
     }
-}
+    
+    function subtract(key, value) {
+        if (!key) {
+            throw new TypeError("[MYDB] Missing db key for subtract()")
+        } else {
+        if (!value) {
+            throw new TypeError("[MYDB] Missing value to subtract for subtract()")
+        } else {
+            try {
+                    const math = `${db.get(key)-value}`
+                    db.set(key, math)
+                    return console.log(`[MYDB] Successfully subtracted!`)
+            } catch (err) {
+                throw new TypeError(err)
+                }
+            }
+        }
+    }
 
 
 function add(key, value) {
@@ -200,6 +205,8 @@ function add(key, value) {
         }
     }
 }
+
+module.exports = {}
 
 // Hope you enjoy using mydb!
 // Version alpha3.4.4

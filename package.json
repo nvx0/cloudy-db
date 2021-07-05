@@ -1,11 +1,28 @@
 {
-  "name": "my-db",
-  "author": "cloud3 (cloud3.site)",
-  "version": "1.0.0",
+  "name": "cloudy-db",
+  "author": "cloud3 (cloud3.site) | Remixiak (remixiak.xyz)",
+  "version": "1.0.2",
   "main": "index.js",
   "dependencies": {
+    "cloudy-db": "^1.0.2",
     "fs": "^0.0.1-security",
     "js-sha256": "^0.9.0",
     "simple-json-db": "^1.2.3"
-  }
+  },
+  "description": "<h1 align=\"center\">Welcome to cloudy-db 👋</h1>",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/falseCloud/cloudy-db.git"
+  },
+  "keywords": [
+    "cloudy-db"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/falseCloud/cloudy-db/issues"
+  },
+  "homepage": "https://github.com/falseCloud/cloudy-db#readme"
 }
