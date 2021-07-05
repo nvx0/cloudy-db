@@ -1,15 +1,13 @@
 {
   "name": "cloudy-db",
   "author": "cloud3 (cloud3.site) | Remixiak (remixiak.xyz)",
-  "version": "2.5.4",
+  "version": "2.5.5",
   "main": "index.js",
   "dependencies": {
-    "cloudy-db": "^1.4.2",
-    "fs": "^0.0.1-security",
     "js-sha256": "^0.9.0",
     "simple-json-db": "^1.2.3"
   },
-  "description": "<h1 align=\"center\">Welcome to cloudy-db 👋</h1>",
+  "description": "Welcome to cloudy-db 👋",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

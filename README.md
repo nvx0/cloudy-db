@@ -25,15 +25,15 @@ npm i cloudy-db
 
 ## Example
 ```js
-const cloudy = require('cloudy-db');
+const cloudy = require("cloudy-db");
 const db = new cloudy({
-path: 'db-bot'
-})
+  path: "db-bot",
+});
 
 // Example
 
-db.set("cloudy-db", "easiest and fastest db!")
-console.log(db.get("cloudy-db"))
+db.set("cloudy-db", "easiest and fastest db!");
+console.log(db.get("cloudy-db"));
 
 // Coded by ThatRemixiak and falseCloud
 ```
