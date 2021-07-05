@@ -29,8 +29,7 @@ console.log(db.get("cloudy-db"))
 
 ## DB Operations
 
-<h6>*Note: db stands for how you defined cloudy-db For example. 
-const totallynotdb = require('cloudy-db');
+<h6>*Note: db stands for how you defined cloudy-db 
 You can define it however you like!</h6>
 
 Set value
