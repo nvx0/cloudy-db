@@ -88,6 +88,30 @@ class Database {
             throw new Error(e)
         }
     }
+    
+    cleandb(path) {
+        try {
+            fs.writeFile(this.path, "", function(err) {
+                if(err) {
+                    return console.log(err);
+                }})
+                return console.log(`[MYDB] Successfully cleaned DB!`) && console.log(`[MYDB.INFO] If you made mistake check your backup file!`)
+        } catch (err) {
+            throw new TypeError(err)
+            }
+        }
+
+    cleanbackup(path) {
+        try {
+            fs.writeFile(this.path, "", function(err) {
+                if(err) {
+                    return console.log(err);
+                }})
+                return console.log(`[MYDB] Successfully cleaned backup DB!`) && console.log(`[MYDB.INFO] If you made mistake check your main DB file!`)
+        } catch (err) {
+            throw new TypeError(err)
+            }
+        }
 
     /**
      * Extract data from database
