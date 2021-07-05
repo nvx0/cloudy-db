@@ -4,6 +4,8 @@ const fs = require('fs');
 const JSONdb = require('simple-json-db');
 const sha256 = require('js-sha256');
 
+export { ms };
+
     if (fs.existsSync(db_path_backup)) {
       // pass
     } else {
