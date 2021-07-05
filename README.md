@@ -15,6 +15,18 @@
 npm i cloudy-db
 ```
 
+## Example
+```js
+const db = require('cloudy-db');
+
+// Example
+
+db.set("cloudy-db", "easiest and fastest db!")
+console.log(db.get("cloudy-db"))
+
+// Coded by ThatRemixiak and falseCloud
+```
+
 ## DB Operations
 Set value
 ```js
