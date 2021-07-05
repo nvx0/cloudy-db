@@ -21,6 +21,53 @@ npm i
 node test.js
 ```
 
+## DB Operations
+Set value
+```js
+set("mydb","welcome to my db!")
+```
+Delete value
+```js
+del("mydb")
+```
+Has value?
+```js
+has("mydb")
+```
+## DB Math operations
+Subctraction
+```js
+subtract("mydb_subtract", "70")
+```
+Add
+```js
+add("mydb_subtract", "420")
+```
+## DB Backup
+Save backup
+```js
+backup("save")
+```
+Read backup
+```js 
+backup("read")
+```
+## DB Extraction
+Extract all values from DB without SHA256 Encrypting (permament):
+```js
+extract("<filname>", "false")
+```
+Extract all values from DB with SHA256 Encrypting:
+```js
+extract("<filname>", "true")
+```
+
+## DB Sync
+```js
+sync()
+```
+
+
 ## Author
 
 👤 **Jakub Kun**
