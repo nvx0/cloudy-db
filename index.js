@@ -13,15 +13,24 @@ class Database {
         this.database = new DB(this.path);
     }
 
+    db() {
+        let data = {
+            origin: this.database,
+            this: this
+        }
+        return data 
+    }
+
     /**
      * Get a value from the database
      * @param {string} key - Key
      * @returns {*} - Data
      */
+
     get(key) {
         if (!key) throw new TypeError("[GET] No key specifiied!")
         try {
-            return this.database.get(key)
+            return Buffer.from(this.database.get(key), 'base64').toString('ascii')
         } catch (err) {
             throw new Error(err)
         }
@@ -58,7 +67,7 @@ class Database {
     set(key, value) {
         if (!key || !value) throw new TypeError("[SET] No key or value specifiied!")
         try {
-            return this.database.set(key, value)
+            return `${this.database.set(key, Buffer.from(value).toString('base64'))}`
         } catch (err) {
             throw new Error(err)
         }

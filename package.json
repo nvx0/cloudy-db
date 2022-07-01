@@ -1,7 +1,7 @@
 {
   "name": "cloudy-db",
   "author": "cloud3 (cloud3.site) | Remixiak (remixiak.xyz)",
-  "version": "2.5.4",
+  "version": "2.6.0",
   "main": "index.js",
   "dependencies": {
     "cloudy-db": "^1.4.2",
