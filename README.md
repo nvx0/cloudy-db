@@ -7,7 +7,7 @@
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://cloud3.site/)
 [![License: MIT](https://img.shields.io/github/license/falseCloud/cloudy-db)](https://img.shields.io/github/license/falseCloud/cloudy-db)
 
-> Very easy and lightweight quick to use db, which is weekly updated! 
+> Very easy and lightweight quick to use db, ~~which is weekly updated!~~ 
 
 
 ### 🏠 [Homepage](https://github.com/falseCloud/cloudy-db)
